@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+        rel="stylesheet">
+    <title>문서함</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        crossorigin="anonymous">
+    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
+    <style>
+        :root {
+            --blue: #256EF4;
+            --blue-dark: #1555D4;
+            --blue-light: #E8F0FE;
+            --gray-bg: #F5F6F8;
+            --text: #1A1D23;
+            --text-sub: #6B7280;
+            --border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Google Sans', sans-serif;
+            background-color: var(--gray-bg);
+            color: var(--text);
+        }
+
+        .main-header {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 0 2rem;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #1A1D23;
+        }
+
+        .site-logo img {
+            height: 32px;
+            width: auto;
+        }
+
+        .logo-divider {
+            width: 1px;
+            height: 18px;
+            background: var(--border);
+        }
+
+        .logo-title {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--text-sub);
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-item-link {
+            display: block;
+            padding: 6px 14px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-sub);
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .nav-item-link:hover {
+            background: var(--blue-light);
+            color: var(--blue);
+        }
+
+        .nav-item-link.active {
+            background: var(--blue);
+            color: #fff;
+        }
+
+        .page-top {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 28px 0 24px;
+        }
+
+        .page-top-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .page-title {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin: 0;
+        }
+
+        .btn-upload {
+            background: var(--blue);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 18px;
+            font-size: 13px;
+            font-weight: 500;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .btn-upload:hover {
+            background: var(--blue-dark);
+            transform: translateY(-1px);
+        }
+
+        .board-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 24px 16px;
+        }
+
+        .page-link {
+            color: var(--text-sub);
+            border-color: var(--border);
+            border-radius: 8px !important;
+        }
+
+        .page-link:hover {
+            background-color: var(--blue-light);
+            color: var(--blue);
+            border-color: var(--blue);
+        }
+
+        .page-link.active .page-link {
+            background-color: var(--blue);
+            border-color: var(--border);
+        }
+
+        .pagination {
+            gap: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header sticky-top">
+        <a href="/" class="site-logo text-decoration-none">
+            <img src="logo.png" alt="FNC Logo">
+            <div class="logo-divider"></div>
+            <span class="logo-title">FNC INTRANET SYSTEM</span>
+        </a>
+        <ul class="main-nav mb-0">
+            <li><a href="#" class="nav-item-link active">갤러리</a></li>
+            <li><a href="#" class="nav-item-link">자유게시판</a></li>
+            <li><a href="#" class="nav-item-link">공지사항</a></li>
+            <li><a href="#" class="nav-item-link">회의실예약</a></li>
+        </ul>
+    </header>
+    <div class="page-top">
+        <div class="page-top-inner d-flex justify-content-between align-items-end">
+            <div>
+                <h1 class="page-title mb-1">내 문서함</h1>
+                <p class="text-secondary mb-0" style="font-size: 13px;">문서등록</p>
+            </div>
+            <button type="button" class="btn-upload">글쓰기</button>
+        </div>
+    </div>
+    <main>
+        <div class="container">
+            <div class="form-wrap">
+                <ul class="nav nav-underline">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">휴가신청서</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">출장품의서</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">지출품의서</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">재택신청서</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">성명</label>
+                <select class="form-select">
+                    <option selected>신나라</option>
+                </select>
+                </label>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">재택근무 일자</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">시작일</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                        value="option1">
+                    <label class="form-check-label" for="inlineRadio1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                        value="option2">
+                    <label class="form-check-label" for="inlineRadio2">2</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                        value="option3" disabled>
+                    <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">재택근무 사유</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1"></textarea>
+            </div>
+        </div>
+    </main>
+    <nav class="d-flex justify-content-center mt-2" aria-label="갤러리 페이지 네비게이션">
+        <ul class="pagination">
+            <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+        </ul>
+    </nav>
+    </div>
+    <footer class="py-3 my-4 border-top text-center">
+        <p class="text-body-secondary mb-0" style="font-size: 12px;">
+            Copyright &copy; FNC Technology Co.,Ltd ALL RIGHTS RESERVED
+        </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
