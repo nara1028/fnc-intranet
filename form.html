@@ -220,54 +220,175 @@
             <div class="form-wrap">
                 <ul class="nav nav-underline mb-4">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">휴가신청서</a>
+                        <a class="nav-link active" data-bs-toggle="tab" href="#휴가">휴가신청서</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">출장품의서</a>
+                        <a class="nav-link" data-bs-toggle="tab" href="#출장">출장품의서</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">지출품의서</a>
+                        <a class="nav-link" data-bs-toggle="tab" href="#지출">지출품의서</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">재택신청서</a>
+                        <a class="nav-link" data-bs-toggle="tab" href="#재택">재택신청서</a>
                     </li>
                 </ul>
-                <div class="mb-3">
-                    <label class="form-label">성명</label>
-                    <select class="form-select">
-                        <option selected>신나라</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">재택근무 일자</label>
-                    <input type="date" class="form-control">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">시작일</label>
-                    <div class="d-flex gap-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="startDay" id="전일" checked>
-                            <label class="form-check-label" for="전일">전일</label>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="휴가">
+                        <div class="mb-3">
+                            <label class="form-label">성명</label>
+                            <select class="form-select">
+                                <option selected>신나라</option>
+                            </select>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="startDay" id="오전">
-                            <label class="form-check-label" for="오전">오전</label>
+                        <div class="mb-3">
+                            <label class="form-label">휴가 일자</label>
+                            <input type="date" class="form-control">
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="startDay" id="오후">
-                            <label class="form-check-label" for="오후">오후</label>
+                        <div class="mb-3">
+                            <label class="form-label">시작일</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="startDay" id="vacation-전일"
+                                        checked>
+                                    <label class="form-check-label" for="vacation-전일">전일</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="startDay" id="오전반차">
+                                    <label class="form-check-label" for="오전반차">오전반차</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="startDay" id="오후반차">
+                                    <label class="form-check-label" for="오후반차">오후반차</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">휴가 사유</label>
+                                <textarea class="form-control" row="3" placeholder="휴가 사유를 입력하세요"></textarea>
+                            </div>
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">재택 사유</label>
-                        <textarea class="form-control" row="3" placeholder="재택 사유를 입력하세요"></textarea>
+                    <div class="tab-pane fade" id="출장">
+                        <div class="mb-3">
+                            <label class="form-label">참여자</label>
+                            <div class="form-control d-flex align-items-center gap-2">
+                                <span class="participant-tag">
+                                    <button type="button" class="btn-close"></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">출장일자</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">시작일</label>
+                            <div class="d-flex gap-3 mt-1">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="trip-day" id="trip-전일" checked>
+                                    <label class="form-check-label" for="trip-전일">전일</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="trip-day" id="trip-오전">
+                                    <label class="form-check-label" for="trip-오전">오전</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="trip-day" id="trip-오후">
+                                    <label class="form-check-label" for="trip-오후">오후</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">관련 과제</label>
+                            <select class="form-select">
+                                <option selected>none</option>
+                            </select>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-8">
+                                <label class="form-label">출장지(기관/지역)</label>
+                                <select class="form-select">
+                                    <option selected>------</option>
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label">지역</label>
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <label class="form-label">출장 목적</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">출장 관계자</label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="지출">
+                        <div class="mb-3">
+                            <label class="form-label">참여자(외부)</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">관련 과제</label>
+                            <select class="form-select">
+                                <option selected>none</option>
+                            </select>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <label class="form-label">집행 종류</label>
+                                <div class="form-check">
+                                    <input class="form-check-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="재택">
+                        <div class="mb-3">
+                            <label class="form-label">성명</label>
+                            <select class="form-select">
+                                <option selected>신나라</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">재택근무 일자</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">시작일</label>
+                            <div class="d-flex gap-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="remoteDay" id="remote-전일"
+                                        checked>
+                                    <label class="form-check-label" for="remote-">전일</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="remoteDay" id="오전">
+                                    <label class="form-check-label" for="오전">오전</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="remoteDay" id="오후">
+                                    <label class="form-check-label" for="오후">오후</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">재택 사유</label>
+                                <textarea class="form-control" row="3" placeholder="재택 사유를 입력하세요"></textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center gap-2 mt-4">
-                    <button type="button" class="btn btn-primary px-4">저장</button>
-                    <button type="button" class="btn btn-outline-secondary px-4">취소</button>
-                </div>
+
             </div>
+            <div class="d-flex justify-content-center gap-2 mt-4">
+                <button type="button" class="btn btn-primary px-4">저장</button>
+                <button type="button" class="btn btn-outline-secondary px-4">취소</button>
+            </div>
+        </div>
+        </div>
         </div>
     </main>
     <footer class="py-3 my-4 border-top text-center">
